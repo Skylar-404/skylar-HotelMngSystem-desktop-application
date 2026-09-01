@@ -1,8 +1,8 @@
-# Hotel Front Desk — What Was Built
 
-This picks up your existing WinForms + .NET Framework 4.7.2 + SQL Server project and
-finishes it into a working CRUD app for all 7 modules: Dashboard, Reservation, Guest
-Lookup, Room Operation, Payment, Report, User, plus Logout.
+
+
+
+# Hotel Front Desk
 
 ## 1. Set up the database first
 
@@ -17,8 +17,8 @@ Default logins (password is the same for both, change it after first login):
 
 | Username   | Password  | Role     |
 |------------|-----------|----------|
-| admin      | admin123  | EMPLOYER |
-| frontdesk  | admin123  | EMPLOYEE |
+| admin      | ********  | EMPLOYER |
+| frontdesk  | ********  | EMPLOYEE |
 
 The connection string is hard-coded in `Database/Dbconnection.cs` (this was already
 the case in your original project) — update the server name / credentials there if
@@ -28,44 +28,6 @@ they differ from `.\SQLEXPRESS`, database `HotelSystem`, user `sa`.
 
 Nothing else to configure — `Program.cs` now boots to the Login screen, and after a
 successful sign-in it opens `MainForm`.
-
-## Key assumptions I made (please double-check these)
-
-- **No screenshot was actually attached** to the request — only the project zip came
-  through. I kept the visual language your project already had (white background,
-  `RoundedButton`/`RoundedTextBox`, AliceBlue grid headers) rather than inventing a
-  new look.
-- **"Admin" role mapping.** Your `Users.Role` check constraint only allows
-  `EMPLOYER`, `MANAGER`, `EMPLOYEE` — there's no literal "Admin". I treated
-  **EMPLOYER as the Admin-equivalent**: only EMPLOYER accounts can see the "User"
-  button and manage other users. If you intended a different role to be the admin
-  tier, it's a one-line change in `Helpers/SessionHelper.cs` (`IsAdmin`) and
-  `Models/User.cs` (`IsAdmin`).
-- **Guests table was added** (see above) with fields matching what `hotelDS.xsd`
-  already expected (FirstName, LastName, Gender, Phone) plus Email, Address,
-  IDNumber, Nationality, Status — reasonable fields for a real front desk guest
-  record.
-- **Data access approach.** Your original `hotelDS.xsd` typed DataSet only had a
-  partial `Guests` table wired up. Hand-editing generated XSD/Designer XML for
-  6 more entities without Visual Studio's designer tool is extremely fragile, so
-  the rest of the DAL (`RoomDAL`, `ReservationDAL`, `PaymentDAL`, `UserDAL`,
-  `RoomTypeDAL`, `RoomOperationDAL`, `DashboardDAL`, `ReportDAL`) uses plain
-  ADO.NET (`SqlCommand` / `SqlDataAdapter`) through your existing `Dbconnection`
-  helper — same pattern, no generated XML to fight with. `GuestsDAL.cs` was
-  rewritten the same way for consistency (kept the original filename since the
-  project already referenced it).
-- **Password hashing** is a basic SHA-256 (`Helpers/PasswordHelper.cs`) — enough for
-  a local demo/training app, not something I'd ship to production without adding a
-  per-user salt and a slower algorithm (PBKDF2/BCrypt).
-- **Login form** previously had no authentication logic at all (the Sign In button
-  had no click handler, and `Program.cs` booted straight to `MainForm`, skipping
-  login entirely). That's now fixed: `Program.cs` starts at `loginForm`, which
-  authenticates against the `Users` table and only opens `MainForm` on success.
-- **Room ↔ Reservation status sync.** When a reservation is marked `CHECKED_IN` the
-  room automatically flips to `OCCUPIED`; `CHECKED_OUT` flips the room to `DIRTY`
-  (needs cleaning) and logs an entry in `RoomOperations`. This isn't something you
-  asked for explicitly, but it's the kind of behavior a real front desk needs and
-  it reuses tables you already had (`RoomOperations`).
 
 ## What's in each module
 
@@ -92,19 +54,3 @@ successful sign-in it opens `MainForm`.
 - **Logout** — confirms, clears the session, and returns to the Sign In screen
   (this flow already existed in your code — I left it as-is, just added the
   session clear).
-
-## Things intentionally left simple (per "avoid over-engineering")
-
-- Room Types are seeded reference data, editable in the database directly rather
-  than through a dedicated screen — Room Operation lets you assign an existing type
-  to a room, which covers the day-to-day need.
-- Reports are grid + summary line, not a formatted printable report — your project
-  already has `Report1.rdlc` and the ReportViewer packages installed if you want to
-  upgrade to a printable layout later.
-- `AuditLogs` table exists in your schema but isn't wired up yet — it's there if you
-  want to add change history later.
-
-## Icons
-
-All icon slots (dashboard cards, sidebar) use the `PictureBox` placeholders already
-in your project — no new image assets were added, as requested.
