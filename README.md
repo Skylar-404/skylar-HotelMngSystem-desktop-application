@@ -25,25 +25,20 @@
 
 # Hotel Front Desk
 
-## 1. Set up the database
+## Set up
 
-Run these two scripts, in order, against your SQL Server instance:
+Run these two scripts, in order:
 
-1. `databaseSchema.sql` — same as before, **plus a `Guests` table that was missing**
-   (it was referenced by a foreign key in `Reservations` but never created).
+1. `databaseSchema.sql` 
 2. `seed_data.sql` — creates a default admin login, one staff login, 4 room types,
    and 8 sample rooms so the app isn't empty on first run.
-
-Default logins (password is the same for both, change it after first login):
+   
+Default logins:
 
 | Username   | Password  | Role     |
 |------------|-----------|----------|
 | admin      | ********  | EMPLOYER |
 | frontdesk  | ********  | EMPLOYEE |
-
-The connection string is hard-coded in `Database/Dbconnection.cs` (this was already
-the case in your original project) — update the server name / credentials there if
-they differ from `.\SQLEXPRESS`, database `HotelSystem`, user `sa`.
 
 ## 2. Open in Visual Studio and run
 
