@@ -24,7 +24,7 @@ Run these two scripts, in order:
 2. `seed_data.sql` — creates a default admin login, one staff login, 4 room types,
    and 8 sample rooms so the app isn't empty on first run.
    
-Default logins:
+Default logins: (see inside the seed_data.sql)
 
 | Username   | Password  | Role     |
 |------------|-----------|----------|
