@@ -1,10 +1,31 @@
+<div align="center">
 
+  <table>
+    <tr>
+      <td>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+             width="130"
+             alt="C#">
+      </td>
+      <td>
+        <h1>.NET Framework</h1>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white">
+  <img src="https://img.shields.io/badge/.NET%20Framework-4.8-512BD4?style=flat-square&logo=.net&logoColor=white">
+  <img src="https://img.shields.io/badge/license-MIT-82B541?style=flat-square">
+
+</div>
 
 
 
 # Hotel Front Desk
 
-## 1. Set up the database first
+## 1. Set up the database
 
 Run these two scripts, in order, against your SQL Server instance:
 
