@@ -9,7 +9,7 @@ namespace hotelmngsystem.Database
 {
     internal class Dbconnection
     {
-        private string connectionString = "Server=.\\SQLEXPRESS;Database=HotelSystem;User Id=sa;Password=qwertyuiopasdfghjklzxcvbnm;";
+        private string connectionString = "Server=.\\SQLEXPRESS;Database=HotelSystem;User Id=[user_id];Password=[user_pwd];";
         public SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);
