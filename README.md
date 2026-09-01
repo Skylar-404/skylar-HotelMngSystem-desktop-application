@@ -25,7 +25,7 @@
 
 # Hotel Front Desk
 
-## Set up
+## Database (Localhost)
 
 Run these two scripts, in order:
 
@@ -40,7 +40,7 @@ Default logins:
 | admin      | ********  | EMPLOYER |
 | frontdesk  | ********  | EMPLOYEE |
 
-## 2. Open in Visual Studio and run
+## Open in Visual Studio (2026) and run
 
 Nothing else to configure — `Program.cs` now boots to the Login screen, and after a
 successful sign-in it opens `MainForm`.
