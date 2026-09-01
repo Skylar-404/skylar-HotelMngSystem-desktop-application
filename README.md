@@ -1,27 +1,18 @@
 <div align="center">
 
-  <table>
-    <tr>
-      <td>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-             width="130"
-             alt="C#">
-      </td>
-      <td>
-        <h1>.NET Framework</h1>
-      </td>
-    </tr>
-  </table>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+     width="160"
+     alt="C#">
 
-  <br>
+<h1>.NET Framework</h1>
 
+<p>
   <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white">
   <img src="https://img.shields.io/badge/.NET%20Framework-4.8-512BD4?style=flat-square&logo=.net&logoColor=white">
-  <img src="https://img.shields.io/badge/license-MIT-82B541?style=flat-square">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square">
+</p>
 
 </div>
-
-
 
 # Hotel Front Desk
 
