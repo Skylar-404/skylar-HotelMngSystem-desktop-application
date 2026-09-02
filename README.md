@@ -41,7 +41,7 @@ Replace the `[server_name]` with your local DATABASE server.
 
 ## Open in Visual Studio (2026)
 
-<div class="center">
+<div align="center">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
        width="150"
        alt="Visual Studio">
