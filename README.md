@@ -16,13 +16,6 @@
 
 ## Database (Localhost)
 
-<div align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
-       width="150"
-       alt="SQL Server">
-</div>
-
-
 Run these two scripts, in order:
 
 1. `databaseSchema.sql` 
@@ -47,12 +40,6 @@ Replace the `[server_name]` with your local DATABASE server.
 <b>⚠ Error note:</b> Having trouble connecting to the database, this is because of the permission error, wrong credentials, or SQL services are not running (Check your SQL services in `services.msc`).
 
 ## Open in Visual Studio (2026)
-
-<div align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
-       width="150"
-       alt="Visual Studio">
-</div>
 
 <b>⚠ Important: </b>Before you build the project, check the `NuGet Packages`. Install the required packages (See packages folder)
 
