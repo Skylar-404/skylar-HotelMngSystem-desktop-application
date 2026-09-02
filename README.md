@@ -31,6 +31,19 @@ Default logins: (see inside the seed_data.sql)
 | admin      | ********  | EMPLOYER |
 | frontdesk  | ********  | EMPLOYEE |
 
+## Database connection
+
+Set up your database in `App.config`
+
+Sample:
+`connectionString="Data Source=[server_name];Initial Catalog=HotelSystem;Persist Security Info=True;User ID=[usr_id];Password=[usr_pwd];TrustServerCertificate=True" providerName="System.Data.SqlClient" />`
+
+Replace the `[server_name]` with your local DATABASE server.
+Replace the `[usr_name]` with your user name.
+Replace the `[usr_pwd]` with your password.
+
+<b>Error note:</b> Having trouble connecting to the database, this is because of permission error / wrong credentials / or SQL services are not running (Check your SQL services (local) in `services.msc`).
+
 ## Open in Visual Studio (2026) and run
 
 Nothing else to configure — `Program.cs` now boots to the Login screen, and after a
@@ -58,6 +71,4 @@ successful sign-in it opens `MainForm`.
   assignment, optional password reset on edit. The button is hidden entirely for
   non-admins, and the handler double-checks the role even if someone tries to
   trigger it another way.
-- **Logout** — confirms, clears the session, and returns to the Sign In screen
-  (this flow already existed in your code — I left it as-is, just added the
-  session clear).
+- **Logout** — confirms, clears the session, and returns to the Sign In screen.
