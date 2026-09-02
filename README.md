@@ -33,7 +33,7 @@ Default logins: (see inside the seed_data.sql)
 
 ## Database connection
 
-COnfigure your database connection in `App.config` and `Database/Dbconnection.cs`
+Configure your database connection in `App.config` and `Database/Dbconnection.cs`
 
 Sample:
 
