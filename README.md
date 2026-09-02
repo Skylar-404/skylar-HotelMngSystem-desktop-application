@@ -14,8 +14,6 @@
 
 </div>
 
-# Hotel Front Desk
-
 ## Database (Localhost)
 
 Run these two scripts, in order:
@@ -42,7 +40,7 @@ Replace the `[server_name]` with your local DATABASE server.
 <b>⚠ Error note:</b> Having trouble connecting to the database, this is because of the permission error, wrong credentials, or SQL services are not running (Check your SQL services in `services.msc`).
 
 ## Build Project
-<b>⚠ Important</b>Before you build your project, check the `NuGet Packages`. Install the required packages (See packages folder)
+<b>⚠ Important: </b>Before you build the project, check the `NuGet Packages`. Install the required packages (See packages folder)
 
 ## Open in Visual Studio (2026) and run
 
