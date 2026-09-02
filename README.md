@@ -16,6 +16,13 @@
 
 ## Database (Localhost)
 
+<div align="center">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+       width="150"
+       alt="SQL Server">
+</div>
+
+
 Run these two scripts, in order:
 
 1. `databaseSchema.sql` 
