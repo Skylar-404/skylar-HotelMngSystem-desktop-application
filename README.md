@@ -36,14 +36,16 @@ Default logins: (see inside the seed_data.sql)
 Configure your database connection in `App.config` and `Database/Dbconnection.cs`
 
 Sample:
-
 `connectionString="Data Source=[server_name];Initial Catalog=HotelSystem;Persist Security Info=True;User ID=[usr_id];Password=[usr_pwd];TrustServerCertificate=True" providerName="System.Data.SqlClient" />`
 
-<br>Replace the `[server_name]` with your local DATABASE server.
+Replace the `[server_name]` with your local DATABASE server.
 <br>Replace the `[usr_name]` with your user name.
 <br>Replace the `[usr_pwd]` with your password.
 
 <b>⚠ Error note:</b> Having trouble connecting to the database, this is because of the permission error, wrong credentials, or SQL services are not running (Check your SQL services (local) in `services.msc`).
+
+## Build Project
+<b>⚠ Important</b>Before you build your project, check the `NuGet Packages`. Install the required packages (See packages folder above)
 
 ## Open in Visual Studio (2026) and run
 
